@@ -16,16 +16,22 @@ class Vector extends Array<number> {
         return new Vector(result);
     }
 
-    static average(...vectors: Vector[]) {
+    /**
+     * Finds the average of the given vectors.
+     * @param {(Vector|number[])[]} vectors - The vectors to average. Must be an array of vectors or arrays of numbers, or a mixture of both.
+     * @returns {Vector} The average of the vectors.
+     */
+    static average(vectors: (Vector | number[])[]): Vector {
+        console.log(vectors);
         if (vectors.length === 0) {
             throw new Error(
                 "At least one vector is required to compute the average"
             );
         }
-
-        let dimension = vectors[0].values.length;
+        let dimension = vectors[0].length;
+        console.log(dimension);
         vectors.forEach((vector) => {
-            if (vector.values.length !== dimension) {
+            if (vector.length !== dimension) {
                 throw new Error("All vectors must be of the same dimension");
             }
         });

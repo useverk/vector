@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "vitest"
     },
     "keywords": [
         "vector",
@@ -15,5 +15,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/useverk/vector.git"
+    },
+    "devDependencies": {
+        "vitest": "^1.0.2"
     }
 }
