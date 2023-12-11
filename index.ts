@@ -22,14 +22,12 @@ class Vector extends Array<number> {
      * @returns {Vector} The average of the vectors.
      */
     static average(vectors: (Vector | number[])[]): Vector {
-        console.log(vectors);
         if (vectors.length === 0) {
             throw new Error(
                 "At least one vector is required to compute the average"
             );
         }
         let dimension = vectors[0].length;
-        console.log(dimension);
         vectors.forEach((vector) => {
             if (vector.length !== dimension) {
                 throw new Error("All vectors must be of the same dimension");
@@ -59,7 +57,6 @@ class Vector extends Array<number> {
      * let v2 = new Vector([4, 5, 6])
      * let v3 = new Vector([7, 8, 9])
      * let average = Vector.weightedAverage([v1, v2, v3], [1, 2, 3])
-     * console.log(average) // [4.5, 5.5, 6.5]
      *
      */
     static weightedAverage(
